@@ -41,8 +41,8 @@ const Article = (props) => {
               />
             </div>
             <div className="col-md-8 tablet:flex tablet:flex-col tablet:justify-center laptop:justify-center">
-              <div className="mx-3">
-                <p className="font-medium  text-gray-500">
+              <div className="mx-3 ">
+                <p className="font-medium  text-gray-500 text-black">
                   <Link to={`/profile/${author}`}>
                     {articleAuthor.username}
                   </Link>{" "}
@@ -57,7 +57,7 @@ const Article = (props) => {
                 <p className="card-text  font-medium">
                   {body.replace(/<\/?[^>]+(>|$)/g, "").slice(0, 80)}...
                 </p>
-                <div className="grid grid-cols-2 text-gray-500 font-medium tablet:justify-end ">
+                <div className="grid grid-cols-2 text-gray-500 text-black font-medium tablet:justify-end ">
                   <p>{dateFormat}</p> <p>{readingTime} min read</p>
                 </div>
               </div>

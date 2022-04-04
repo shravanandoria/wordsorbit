@@ -58,7 +58,7 @@ const CreateArticle = () => {
       {loginMessage ? (
         <h1 className="text-center text-3xl font-bold ">{loginMessage}</h1>
       ) : (
-        <div className="container px-5 py-5">
+        <div className="container px-5 py-5 bg-gray-400">
           <h2 className="text-xl font-extrabold tablet:text-2xl tablet:my-3">
             Create Article
           </h2>
@@ -70,7 +70,7 @@ const CreateArticle = () => {
               ref={articleTitle}
               id="title"
               placeholder=" Title"
-              className="border-b-2 w-full border-yellow-500 font-xl outline-none"
+              className="border-b-2 w-full p-2 rounded border-yellow-500 font-xl outline-none"
             />
             <div className="my-3">
               <select
@@ -86,7 +86,7 @@ const CreateArticle = () => {
                 <option value="Gaming">Gaming</option>
               </select>
             </div>
-            <div className="my-3 flex row justify-left">
+            <div className="my-3 justify-left ">
               <Editor
                 apiKey="9iawbi8owyho0ntw2v5ni672wt66z2ocj7h1r5z7f9ajscwu"
                 onInit={(evt, editor) => (editorRef.current = editor)}
@@ -121,7 +121,7 @@ const CreateArticle = () => {
             ) : (
               <button
                 type="submit"
-                className="btn btn-warning w-1/6 text-white font-bold font-mono"
+                className="btn bg-black text-white font-bold font-mono"
               >
                 Submit
               </button>

@@ -31,15 +31,13 @@ const HomePage = () => {
       {loading ? (
         <Spinner />
       ) : (
-        <div className="container laptop:grid laptop:grid-cols-3 laptop:gap-2 my-4">
+        <div className="container  laptop:grid laptop:grid-cols-3 laptop:gap-2 ">
           {/* Left Container */}
           <div
-            className="left laptop:border-r-2 w-full col-span-2 overflow-y-auto "
+            className="left laptop:border-r-2 w-full col-span-2 overflow-y-auto my-4 "
             style={{ height: "100vh" }}
           >
-            <h1 className=" font-medium text-center mb-3">
-              RECOMMENDED FOR YOU
-            </h1>
+            <h1 className="text-center mb-3 font-bold">RECOMMENDED FOR YOU</h1>
             <hr />
             {articles &&
               articles.map((e) => {
@@ -59,34 +57,37 @@ const HomePage = () => {
           </div>
 
           {/* Right Container */}
-          <div className="right font-bold hidden laptop:block text-center px-8 h-full items-stretch relative scroll-auto">
-            <h1 className="font-medium">Recommended Topics</h1>
+          <div className="right font-bold laptop:block text-center px-8 h-full items-stretch relative scroll-auto my-4 text-sm p-3 md:text-lg md:text-left ">
+            <h1 className="font-bold">Recommended Topics</h1>
+
             <div className="grid grid-cols-3 gap-3 my-4 w-full">
               <Link
-                to="#money"
+                to="#"
                 className="badge rounded-pill w-fit bg-slate-200 font-medium text-sm text-black"
               >
                 Money
               </Link>
               <Link
-                to="/category/#politics"
+                to="#"
                 className="badge rounded-pill w-fit bg-slate-200 font-medium text-sm text-black"
               >
                 Politics
               </Link>
               <Link
-                to="/category/#Startups"
+                to="#"
                 className="badge rounded-pill w-fit bg-slate-200 font-medium text-sm text-black"
               >
                 Startups
               </Link>
               <Link
-                to="/category/#Gaming"
+                to="#"
                 className="badge rounded-pill w-fit bg-slate-200 font-medium text-sm text-black"
               >
                 Gaming
               </Link>
             </div>
+
+            <hr className="my-3" />
 
             <div
               className={`mt-16 text-left h-80 ${

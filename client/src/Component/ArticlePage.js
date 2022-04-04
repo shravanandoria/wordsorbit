@@ -19,6 +19,7 @@ const ArticlePage = () => {
   const [deleteSpinner, setDeleteSpinner] = useState(false);
   const [myArticle, setMyArticle] = useState(false);
   const [articleNotFound, setArticleNotFound] = useState(false);
+  const [articles, setArticles] = useState();
   const navigate = useNavigate();
 
   const articleId = useParams();
@@ -143,6 +144,12 @@ const ArticlePage = () => {
     }
   };
 
+  const fetchArticles = async () => {
+    setLoading(true);
+    const articles = await Axios.get("/articles");
+    setArticles(articles.data.article);
+  };
+
   useEffect(() => {
     console.log(articleNotFound);
     const token = localStorage.getItem("token");
@@ -151,8 +158,8 @@ const ArticlePage = () => {
   }, [articleNotFound]);
 
   useEffect(() => {
-    console.log(articleID.id);
     getUser();
+    // fetchArticles();
   }, [loading]);
 
   return (
@@ -163,7 +170,7 @@ const ArticlePage = () => {
         <div>
           {!articleNotFound ? (
             <div className="tablet:grid tablet:grid-cols-3">
-              {/*  Article Body */}
+              {/* Article Body */}
               <div className="Main_Article w-full container col-span-2 ">
                 <div className="Profile_Image text-center flex items-center mt-5 font-medium justify-start tablet:justify-start mx-1 grid-cols-3 gap-1 text-sm tablet:text-lg">
                   <img
@@ -171,9 +178,9 @@ const ArticlePage = () => {
                     alt="No-Image"
                     className="h-10 border-0"
                   />
-                  <p className="">{author && author.username} |</p>
+                  <p>{author && author.username} |</p>
                   <div className="Date">{articleDate} |</div>
-                  <div className="">{readingTime} min read </div>
+                  <div>{readingTime} min read </div>
                 </div>
                 <h1 className="w-full text-left font-bold my-3 tablet:text-2xl">
                   {article.title}
@@ -183,16 +190,16 @@ const ArticlePage = () => {
                   <img
                     src={article.image}
                     alt="No-Image"
-                    className="my-3 max-h-screen"
+                    className="my-3 max-h-screen w-full"
                   />
                   {myArticle && (
-                    <div className="grid grid-cols-6 gap-2 ">
+                    <div>
                       <Link to={`/update/${articleId.id}`}>
                         <button className="btn btn-primary ">Update</button>
                       </Link>
                       <button
                         onClick={deleteArticle}
-                        className="btn btn-danger "
+                        className="btn btn-danger mx-3"
                       >
                         {deleteSpinner ? (
                           <div class="spinner-border text-light" role="status">
@@ -210,62 +217,42 @@ const ArticlePage = () => {
               </div>
               {/* Related Section */}
               <div className="Related_Body container flex flex-col h-full justify-center text-center tablet:justify-start tablet:mt-4 laptop:text-xl">
-                <h1 className="text-gray-500 text-md font-bold mt-3 tablet:text-left tablet:text-lg laptop:text-2xl ">
+                {/* <h1 className="text-gray-500 text-md font-bold mt-3 tablet:text-left tablet:text-lg laptop:text-2xl ">
                   Related
                 </h1>
-                <div className="heading tablet:text-left">
-                  <h1 className="tablet:text-left">Javascrpt</h1>
-                  <div className="Related_Article flex my-2">
-                    <img
-                      src={require("../Image/image.jpg")}
-                      alt="No-Img"
-                      className="h-14"
-                    />
-                    <div className="mx-2">
-                      <h1>Text editor for react</h1>
-                      <p>Description of the ....</p>
-                    </div>
-                  </div>
-                  <div className="Related_Article flex my-2">
-                    <img
-                      src={require("../Image/image.jpg")}
-                      alt="No-Img"
-                      className="h-14"
-                    />
-                    <div className="mx-2">
-                      <h1>Text editor for react</h1>
-                      <p>Description of the ....</p>
-                    </div>
-                  </div>
-                  <div className="Related_Article flex my-2">
-                    <img
-                      src={require("../Image/image.jpg")}
-                      alt="No-Img"
-                      className="h-14"
-                    />
-                    <div className="mx-2">
-                      <h1>Text editor for react</h1>
-                      <p>Description of the ....</p>
-                    </div>
-                  </div>
-                </div>
+                {articles &&
+                  articles.map((e) => {
+                    return (
+                      <div key={e._id} className="heading tablet:text-left">
+                        <h1 className="tablet:text-left">e.title</h1>
+                        <div className="Related_Article flex my-2">
+                          <img src={e.category} alt="No-Img" className="h-14" />
+                          <div className="mx-2">
+                            <h1>{e.title}</h1>
+                            <p>{e.body.slice(0, 10)}</p>
+                          </div>
+                        </div>
+                      </div>
+                    );
+                  })} */}
+
                 {/* User Profile */}
                 {author && (
-                  <div className="userProfile hidden tablet:block my-3 laptop:w-full laptop:flex laptop:justify-center laptop:px-11 ">
-                    {author._id !== loggeduserId ? (
-                      <div className="max-w-sm bg-white rounded-lg border border-gray-200 shadow-md dark:bg-gray-800 w-full dark:border-gray-700">
-                        <div className="flex flex-col items-center pb-10 ">
-                          <img
-                            className="mb-3 w-24 h-24 rounded-full shadow-lg m-3"
-                            src={author && author.image}
-                            alt="Bonnie image"
-                          />
-                          <h3 className="mb-1 text-xl font-medium text-gray-900 dark:text-white">
-                            {author && author.username}
-                          </h3>
-                          <span className="text-sm text-gray-500 dark:text-gray-400">
-                            {author && author.bio}
-                          </span>
+                  <div className="userProfile  tablet:block my-3 laptop:w-full laptop:flex laptop:justify-center laptop:px-11 ">
+                    <div className="max-w-sm bg-blend-darken rounded-lg border border-gray-200 shadow-lg dark:bg-gray-800 w-full dark:border-gray-700">
+                      <div className="flex flex-col items-center pb-10 ">
+                        <img
+                          className="mb-3 w-24 h-24 rounded-full shadow-lg m-3"
+                          src={author && author.image}
+                          alt="Bonnie image"
+                        />
+                        <h3 className="mb-1 text-xl font-medium text-gray-900 dark:text-white">
+                          {author && author.username}
+                        </h3>
+                        <span className="text-sm text-gray-500 dark:text-gray-400">
+                          {author && author.bio}
+                        </span>
+                        {author._id !== loggeduserId ? (
                           <div className="flex mt-4 space-x-3 lg:mt-6 laptop:text-3xl">
                             <button
                               onClick={() => followUser(author._id)}
@@ -283,17 +270,17 @@ const ArticlePage = () => {
                               )}
                             </button>
                           </div>
-                        </div>
+                        ) : (
+                          ""
+                        )}
                       </div>
-                    ) : (
-                      ""
-                    )}
+                    </div>
                   </div>
                 )}
               </div>
             </div>
           ) : (
-            <div className="text-center text-2xl font-bold">
+            <div className="text-center text-2xl font-bold ">
               <h1>Article Not Found</h1>
             </div>
           )}

@@ -57,20 +57,20 @@ const Profile_HomePage = (props) => {
   return (
     <>
       {userId !== props.id ? (
-        <div className="my-3 text-left">
-          <div className="grid grid-cols-4 gap-1">
-            <div className="flex justify-start items-center">
+        <div className="my-3 text-left bg-slate-600 shadow-md text-gray-300 p-3 rounded">
+          <div className="grid lg:grid-cols-5 xl:grid-cols-5 gap-1">
+            <div>
               <img
                 src={props.image}
                 className="max-w-sm max-h-11 object-cover"
                 alt="no-image"
               />
             </div>
-            <div className="col-md-8 col-span-2 w-full text-left">
+            <div className="col-md-8 col-span-2 w-full text-left ">
               <Link to={`/profile/${props.id}`}>
-                <h5 className="">{props.username}</h5>
-                <p className="card-text font-normal text-sm text-gray-500">
-                  {props.bio}
+                <h5 className="hover:text-black">{props.username}</h5>
+                <p className="card-text font-normal text-sm text-gray-400 hover:text-black">
+                  {props.bio.slice(0, 50)}
                 </p>
               </Link>
             </div>
@@ -78,10 +78,13 @@ const Profile_HomePage = (props) => {
               onClick={() => {
                 followUser(props.id);
               }}
-              className="border-2 rounded-xl p-2 border-gray-500 text-sm text-center w-fit h-fit"
+              className="border-2 hover:bg-black rounded-xl p-2 order-gray-500 text-sm text-center w-fit h-fit col-start-6"
             >
               {loading ? (
-                <div className="spinner-border text-dark h-5 w-5" role="status">
+                <div
+                  className="spinner-border text-dark h-5 w-5 "
+                  role="status"
+                >
                   <span className="sr-only">Loading...</span>
                 </div>
               ) : (

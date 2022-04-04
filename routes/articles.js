@@ -52,7 +52,7 @@ router.post(
 //Fetch all articles
 router.get("/", async (req, res) => {
   try {
-    const article = await Article.find();
+    const article = await Article.find().sort({ _id: -1 });
     res.json({ article });
   } catch (error) {
     res.status(500).json({ error: "Internal Server Error" });

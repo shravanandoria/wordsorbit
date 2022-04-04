@@ -43,16 +43,16 @@ const Signup = (props) => {
       <img
         src={require("../Image/loginImage.png")}
         alt="no-image"
-        className="absolute h-full w-full z-0 object-cover"
+        className="absolute h-full w-full z-0"
       />
       {/* <div class="alert alert-danger text-center" role="alert">
         Email or password incorrect
       </div> */}
       )
-      <div className="w-full z-10 relative flex justify-center items-center tablet:pt-10 laptop:pt-16 container">
+      <div className="w-full z-10 relative flex justify-center items-center tablet:pt-10 laptop:p-2 container">
         <div className="px-4  max-w-sm bg-white rounded-lg border border-gray-200 shadow-md sm:p-6 lg:p-8 dark:bg-gray-800 dark:border-gray-700">
           <form className="space-y-6" action="#" onSubmit={onSubmit}>
-            <h3 className="text-xl font-medium text-gray-900 dark:text-white">
+            <h3 className="text-xl font-medium text-gray-900 ">
               Sign up to Wordsorbit
             </h3>
             <div className="tablet:grid tablet:grid-cols-2 tablet:gap-2">
@@ -64,7 +64,7 @@ const Signup = (props) => {
                 type="file"
                 name="image"
                 id="image"
-                className="bg-gray-50 border col-span-2 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                className="bg-gray-50 border col-span-2 border-gray-300 text-white text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 "
                 placeholder="First Name"
                 required="Image is Required"
               />
@@ -74,7 +74,7 @@ const Signup = (props) => {
                 type="text"
                 name="fname"
                 id="fname"
-                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                className="bg-gray-50 border border-gray-300 text-white text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 "
                 placeholder="First Name"
                 required="First Name Is Required"
               />
@@ -84,7 +84,7 @@ const Signup = (props) => {
                 type="text"
                 name="lname"
                 id="lname"
-                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                className="bg-gray-50 border border-gray-300 text-white text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 "
                 placeholder="Last Name"
                 required="Last Name is Required"
               />
@@ -94,7 +94,7 @@ const Signup = (props) => {
                 type="text"
                 name="username"
                 id="username"
-                className="bg-gray-50 border tablet:col-span-2 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                className="bg-gray-50 border tablet:col-span-2 border-gray-300 text-white text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 "
                 placeholder="Username"
                 required="username is required"
               />
@@ -103,7 +103,7 @@ const Signup = (props) => {
                 type="email"
                 name="email"
                 id="email"
-                className="bg-gray-50 border tablet:col-span-2 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                className="bg-gray-50 border tablet:col-span-2 border-gray-300 text-white text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 "
                 placeholder="E-mail"
                 required="email is required"
               />
@@ -112,7 +112,7 @@ const Signup = (props) => {
                 type="text"
                 name="bio"
                 id="bio"
-                className="bg-gray-50 border tablet:col-span-2 border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                className="bg-gray-50 border tablet:col-span-2 border-gray-300 text-white text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 "
                 placeholder="Your Bio"
                 required="bio is required"
               />
@@ -120,7 +120,7 @@ const Signup = (props) => {
             <div>
               <label
                 htmlFor="password"
-                className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+                className="block mb-2 text-sm font-medium text-gray-900 "
               >
                 Your password
               </label>
@@ -131,7 +131,7 @@ const Signup = (props) => {
                 name="password"
                 id="password"
                 placeholder="••••••••"
-                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                className="bg-gray-50 border border-gray-300 text-white text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 "
                 required="password is required"
               />
             </div>
@@ -147,10 +147,10 @@ const Signup = (props) => {
                 "Create Account"
               )}
             </button>
-            <div className="text-sm font-medium text-gray-500 dark:text-gray-300">
-              Already have an account?{" "}
+            <div className="text-sm font-medium text-gray-500 ">
+              Already have an account?
               <Link
-                to="#"
+                to="/login"
                 className="text-blue-700 hover:underline dark:text-blue-500"
               >
                 Login

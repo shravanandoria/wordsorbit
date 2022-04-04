@@ -9,10 +9,10 @@ import Login from "./Component/Login";
 import Signup from "./Component/Signup";
 import MyProfile from "./Component/MyProfile";
 import UpdateArticle from "./Component/UpdateArticle";
-
 const App = () => {
   const [authenticationPage, setAuthenticationPage] = useState(false);
   useEffect(() => {
+    document.body.classList = "bg-slate-300";
     const path = window.location.pathname;
     console.log(path);
     if (path === "/login" || path === "/signup") {

@@ -1,7 +1,6 @@
 const mongoose = require("mongoose");
-const url =
-  process.env.MONGO_URI ||
-  "mongodb://localhost:27017/WordsOrbit?readPreference=primary&appname=MongoDB%20Compass&directConnection=true&ssl=false";
+const url = process.env.MONGO_URI;
+// "mongodb://localhost:27017/?readPreference=primary&appname=MongoDB%20Compass&directConnection=true&ssl=false";
 // "mongodb+srv://wordsorbit:wordsorbit@wordsorbit.lsglg.mongodb.net/wordsorbit?retryWrites=true&w=majority";
 const connecToMongo = () =>
   mongoose
