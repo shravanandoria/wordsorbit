@@ -27,7 +27,7 @@ const Navbar = (props) => {
         <div className="container-fluid">
           <Link className="navbar-brand flex items-center" to="/">
             <img
-              src="https://www.svgrepo.com/show/205201/orbit.svg"
+              src="https://cdn-icons-png.flaticon.com/512/3034/3034968.png"
               alt="logo"
               className="h-12 mx-3"
             />
