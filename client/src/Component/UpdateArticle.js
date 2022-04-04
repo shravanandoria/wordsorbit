@@ -75,7 +75,7 @@ const UpdateArticle = () => {
       ) : (
         <div className="container px-5 py-5">
           <h2 className="text-xl font-extrabold tablet:text-2xl tablet:my-3">
-            Create Article {article.author}
+            Update Article
           </h2>
           <form
             action="/"
@@ -90,7 +90,7 @@ const UpdateArticle = () => {
               ref={articleTitle}
               id="title"
               placeholder=" Title"
-              className="border-b-2 w-full border-yellow-500 font-xl outline-none"
+              className="border-b-2 w-full rounded border-yellow-500 font-xl outline-none"
             />
             <div className="my-3">
               <select
@@ -162,7 +162,7 @@ const UpdateArticle = () => {
             ) : (
               <button
                 type="submit"
-                className="btn btn-warning w-1/6 text-white font-bold font-mono"
+                className="btn bg-black text-white font-bold font-mono"
               >
                 Submit
               </button>
