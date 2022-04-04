@@ -26,7 +26,11 @@ const Navbar = (props) => {
       >
         <div className="container-fluid">
           <Link className="navbar-brand flex items-center" to="/">
-            <img src={logo} alt="logo" className="h-12 mx-3" />
+            <img
+              src="https://www.svgrepo.com/show/205201/orbit.svg"
+              alt="logo"
+              className="h-12 mx-3"
+            />
             Wordsorbit
           </Link>
           <button
