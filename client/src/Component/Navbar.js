@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-import logo from "./wordsorbit_logo.png";
+import logo from "./newlogo.png";
 const Navbar = (props) => {
   const [token, setToken] = useState();
   const navigate = useNavigate();
@@ -26,11 +26,7 @@ const Navbar = (props) => {
       >
         <div className="container-fluid">
           <Link className="navbar-brand flex items-center" to="/">
-            <img
-              src="https://cdn-icons-png.flaticon.com/512/3034/3034968.png"
-              alt="logo"
-              className="h-12 mx-3"
-            />
+            <img src={logo} alt="logo" className="h-12 mx-3" />
             Wordsorbit
           </Link>
           <button
