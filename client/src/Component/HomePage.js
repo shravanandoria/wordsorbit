@@ -12,12 +12,12 @@ const HomePage = () => {
   const [loading, setLoading] = useState(false);
   const fetchArticles = async () => {
     setLoading(true);
-    const articles = await Axios.get("http://localhost/articles");
+    const articles = await Axios.get("/articles");
     setArticles(articles.data.article);
   };
 
   const fetchUsers = async () => {
-    const users = await Axios.get("http://localhost/auth/allusers");
+    const users = await Axios.get("/auth/allusers");
     setUserSuggestions(users.data.users);
     setLoading(false);
   };
