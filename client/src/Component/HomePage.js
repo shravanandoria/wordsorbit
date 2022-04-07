@@ -12,12 +12,12 @@ const HomePage = () => {
   const [loading, setLoading] = useState(false);
   const fetchArticles = async () => {
     setLoading(true);
-    const articles = await Axios.get("/articles");
+    const articles = await Axios.get("http://localhost/articles");
     setArticles(articles.data.article);
   };
 
   const fetchUsers = async () => {
-    const users = await Axios.get("/auth/allusers");
+    const users = await Axios.get("http://localhost/auth/allusers");
     setUserSuggestions(users.data.users);
     setLoading(false);
   };
@@ -91,7 +91,7 @@ const HomePage = () => {
 
             <div
               className={`mt-16 text-left h-80 ${
-                userSuggestions.length > 4 ? "overflow-y-auto" : ""
+                userSuggestions.length > 3 ? "overflow-y-auto" : ""
               }`}
             >
               <h1>Who to Follow</h1>

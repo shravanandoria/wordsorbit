@@ -58,11 +58,11 @@ const Profile_HomePage = (props) => {
     <>
       {userId !== props.id ? (
         <div className="my-3 text-left bg-slate-600 shadow-md text-gray-300 p-3 rounded">
-          <div className="grid lg:grid-cols-5 xl:grid-cols-5 gap-1">
+          <div className="grid lg:grid-cols-4 gap-1">
             <div>
               <img
                 src={props.image}
-                className="max-w-sm max-h-11 object-cover"
+                className="max-w-sm max-h-11 object-cover "
                 alt="no-image"
               />
             </div>
