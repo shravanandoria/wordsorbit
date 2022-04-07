@@ -40,14 +40,13 @@ const Signup = (props) => {
   };
   return (
     <>
-      <img
-        src={require("../Image/loginImage.png")}
-        alt="no-image"
-        className="absolute h-full w-full z-0"
-      />
-      {/* <div class="alert alert-danger text-center" role="alert">
-        Email or password incorrect
-      </div> */}
+      <div
+        className="absolute h-full w-full z-0 "
+        style={{
+          backgroundImage:
+            "linear-gradient(to right top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1)",
+        }}
+      ></div>
       )
       <div className="w-full z-10 relative flex justify-center items-center tablet:pt-10 laptop:p-2 container">
         <div className="px-4  max-w-sm bg-white rounded-lg border border-gray-200 shadow-md sm:p-6 lg:p-8 dark:bg-gray-800 dark:border-gray-700">

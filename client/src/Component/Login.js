@@ -31,11 +31,13 @@ const Login = (props) => {
   };
   return (
     <>
-      <img
-        src={require("../Image/loginImage.png")}
-        alt="no-image"
-        className="absolute h-full w-full z-0 object-cover"
-      />
+      <div
+        className="absolute h-full w-full z-0 "
+        style={{
+          backgroundImage:
+            "linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12)",
+        }}
+      ></div>
       {error && (
         <div class="alert alert-danger text-center" role="alert">
           Email or password incorrect
